@@ -1,4 +1,4 @@
-package com.android.chefshare.view.activities
+package com.android.chefshare
 
 import android.content.Intent
 import android.graphics.Rect
@@ -8,20 +8,17 @@ import android.widget.TextView
 import android.widget.Toast
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.chefshare.R
-import com.android.chefshare.adapter.RecipeAdapter
-import com.android.chefshare.controller.UserManager
 import com.android.chefshare.model.Recipe
-import com.android.chefshare.view.activities.auth.LoginActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
-
+import com.android.chefshare.view.activities.*
 class MyRecipeStorageActivity : AppCompatActivity() {
 
     private lateinit var rvSavedRecipes: RecyclerView
@@ -64,12 +61,6 @@ class MyRecipeStorageActivity : AppCompatActivity() {
         } else {
             imgHeaderAvatar.visibility = View.VISIBLE
             imgHeaderAvatar.setImageResource(R.drawable.ic_person) // Dùng icon thay thế
-        }
-
-        val btnNotifications = findViewById<View>(R.id.btnNotification)
-        btnNotifications.setOnClickListener{
-            val intent = Intent(this, NotificationActivity::class.java)
-            startActivity(intent)
         }
 
         val fabAddRecipe = findViewById<FloatingActionButton>(R.id.fabAddRecipe)
@@ -166,30 +157,18 @@ class MyRecipeStorageActivity : AppCompatActivity() {
                     val intent = Intent(this, ProfileActivity::class.java)
                     startActivity(intent)
                 }
-                R.id.nav_notifications -> {
-                    val intent = Intent(this, NotificationActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_stats -> showToast("Thống kê bếp")
-                R.id.nav_recent -> {
-                    val intent = Intent(this, RecentDishesActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_premium -> {
-                    val intent = Intent(this, PremiumActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_challenges -> showToast("Thử Thách")
+//                R.id.nav_friends -> showToast("Các Bạn Bếp")
+//                R.id.nav_stats -> showToast("Thống Kê Bếp")
+                R.id.nav_recent -> showToast("Món đã xem gần đây")
+//                R.id.nav_premium -> showToast("Premium")
+//                R.id.nav_challenges -> showToast("Thử Thách")
                 R.id.nav_settings -> {
                     val intent = Intent(this, SettingsActivity::class.java)
                     startActivity(intent)
                 }
 
-                R.id.nav_faq -> showToast("Câu hỏi thường gặp")
-                R.id.nav_feedback -> {
-                    val intent = Intent(this, FeedbackActivity::class.java)
-                    startActivity(intent)
-                }
+//                R.id.nav_faq -> showToast("Câu hỏi thường gặp")
+//                R.id.nav_feedback -> showToast("Gửi phản hồi")
             }
             drawerLayout.closeDrawer(navigationView)
             true

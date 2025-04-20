@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.android.chefshare.MyRecipeStorageActivity
 import com.android.chefshare.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

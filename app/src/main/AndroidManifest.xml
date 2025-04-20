@@ -13,19 +13,17 @@
         android:theme="@style/Theme.ChefShare"
         tools:targetApi="31">
         <activity
-            android:name=".view.activities.auth.LoginActivity"
+            android:name=".view.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activities.auth.RegisterActivity" />
-        <activity android:name=".view.activities.MainActivity" />
+        <activity android:name="com.android.chefshare.LoginActivity" />
         <activity android:name=".view.activities.UploadRecipeActivity" />
         <activity android:name=".view.activities.PremiumActivity" />
-        <activity android:name=".view.activities.MyRecipeStorageActivity" />
+        <activity android:name="com.android.chefshare.MyRecipeStorageActivity" />
         <activity android:name=".view.activities.SearchActivity" />
         <activity android:name=".view.activities.SearchResultsActivity"/>
         <activity android:name=".view.activities.AIRecipeActivity" />

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "69026075891",
+    "project_id": "chefshare-cf124",
+    "storage_bucket": "chefshare-cf124.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69026075891:android:4c1cd15287aab9d3ccd386",
+        "android_client_info": {
+          "package_name": "com.android.chefshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69026075891-c77s7lpgg35rlcrij72co5gb27gjfp61.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.chefshare",
+            "certificate_hash": "5bdb49a86821fdefaeeeb81c756be427f036b440"
+          }
+        },
+        {
+          "client_id": "69026075891-sa1kl34choorkhsir07fgqfr3tphoola.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.chefshare",
+            "certificate_hash": "af863fc822f5c84a6b5591b8efe1a1b9bde23342"
+          }
+        },
+        {
+          "client_id": "69026075891-skd9mjm04hqc3pq3ddo9vfnvd4f76ij9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDABxNCtLWHSFMBA8zl10XjcAvYXPdgt5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69026075891-skd9mjm04hqc3pq3ddo9vfnvd4f76ij9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
