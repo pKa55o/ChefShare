@@ -1,4 +1,4 @@
-package com.android.chefshare
+package com.android.chefshare.model
 
 data class Dish(
     val title: String,

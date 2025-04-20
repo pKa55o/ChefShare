@@ -49,5 +49,8 @@
         android:background="?attr/colorSurface"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/selector_nav"
-        app:itemTextColor="@color/selector_nav" />
+        app:itemTextColor="@color/selector_nav"
+        app:itemIconSize="32dp"
+        app:itemTextAppearanceActive="@android:style/TextAppearance.Medium"
+        app:itemTextAppearanceInactive="@android:style/TextAppearance.Medium"/>
 </FrameLayout>

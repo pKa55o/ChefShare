@@ -165,5 +165,8 @@
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:itemIconSize="32dp"
+        app:itemTextAppearanceActive="@android:style/TextAppearance.Medium"
+        app:itemTextAppearanceInactive="@android:style/TextAppearance.Medium"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

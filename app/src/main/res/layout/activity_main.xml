@@ -6,7 +6,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.activities.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -183,7 +183,10 @@
             app:itemTextColor="@color/selector_nav"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:itemIconSize="32dp"
+            app:itemTextAppearanceActive="@android:style/TextAppearance.Medium"
+            app:itemTextAppearanceInactive="@android:style/TextAppearance.Medium"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Drawer menu -->

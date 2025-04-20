@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#F0F0F0"
+    android:padding="16dp">
+
+    <TextView
+        android:text="Quản lý bài đăng"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:stretchColumns="*"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:padding="4dp">
+
+        <TableRow>
+            <TextView android:text="id bài đăng" android:textStyle="bold" android:gravity="center" android:background="#357ABD" android:padding="8dp" android:textColor="#FFFFFF"/>
+            <TextView android:text="id user" android:textStyle="bold" android:gravity="center" android:background="#357ABD" android:padding="8dp" android:textColor="#FFFFFF"/>
+            <TextView android:text="Tên món ăn" android:textStyle="bold" android:gravity="center" android:background="#357ABD" android:padding="8dp" android:textColor="#FFFFFF"/>
+        </TableRow>
+
+        <!-- Các dòng dữ liệu sẽ thêm bằng code -->
+
+    </TableLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:paddingHorizontal="8dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Quay lại"
+            android:backgroundTint="#357ABD"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_margin="4dp" />
+
+        <Button
+            android:id="@+id/btnDeletePost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Xóa bài đăng"
+            android:backgroundTint="#357ABD"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_margin="4dp" />
+
+        <Button
+            android:id="@+id/btnViewPostDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chi tiết"
+            android:backgroundTint="#357ABD"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_margin="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

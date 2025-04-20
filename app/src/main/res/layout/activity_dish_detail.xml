@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:paddingBottom="80dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- PHẦN 1: activity_recipe.xml -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="473dp"
+            android:paddingBottom="32dp">
+
+            <!-- Ảnh món ăn -->
+            <ImageView
+                android:id="@+id/imageFood_recipe"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/recipe_image_jpeg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Nút Back -->
+            <ImageButton
+                android:id="@+id/btnBack_recipe"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Quay lại"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imageFood_recipe" />
+
+            <!-- Tên món ăn -->
+            <TextView
+                android:id="@+id/textTitle_recipe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Cơm nắm cá ngừ rong biển"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageFood_recipe"
+                android:layout_marginLeft="20dp"/>
+
+            <!-- Người đăng -->
+            <TextView
+                android:id="@+id/textAuthor_recipe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Lan Vy @Lanvy_182 - Hà Tĩnh"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitle_recipe"
+                android:layout_marginLeft="20dp"/>
+
+            <!-- Tiêu đề 'Nguyên Liệu' -->
+            <TextView
+                android:id="@+id/textIngredientsTitle_recipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Nguyên Liệu"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textAuthor_recipe"
+                android:layout_marginLeft="20dp"/>
+
+            <!-- Danh sách nguyên liệu -->
+            <TextView
+                android:id="@+id/textIngredients_recipe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="1 bát cơm nóng\n20gr rong biển trộn cơm\n1 hộp cá ngừ\n2 muỗng canh dầu mè\n1/2 muỗng canh đường\nSốt Mayonnaise, tương ớt"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textIngredientsTitle_recipe"
+                android:layout_marginLeft="20dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- PHẦN 2: cách làm-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFF3E0"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp"
+            android:gravity="center_vertical">
+
+            <!-- Tiêu đề 'Cách làm' chiếm phần lớn không gian -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cách làm"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FF5722" />
+
+            <!-- Icon dấu ba chấm bên phải -->
+            <ImageView
+                android:id="@+id/more_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/steppers_24dp_e3e3e3_fill0_wght400_grad0_opsz24"
+                android:contentDescription="Tùy chọn"
+                app:tint="#FF5722" />
+
+        </LinearLayout>
+
+
+        <!-- PHẦN 2: BƯỚC 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            android:gravity="center_vertical"
+            android:layout_margin="20dp">
+
+            <!-- Icon tròn với số 1 -->
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Nội dung bước 1 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gà mua về rửa sạch với nước (tip nhỏ mình hay dùng nước vo gạo để rửa thịt hoặc mọi người sử dụng muối hạt). Cho gà vào nồi trần qua -> việc trần qua gà giúp gà lọc được các váng bẩn và nướng gà sẽ mềm, nhanh chín hơn"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- PHẦN 3: BƯỚC 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp"
+            android:gravity="center_vertical">
+
+            <!-- Icon tròn với số 2 -->
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                android:layout_margin="20dp"/>
+
+            <!-- Nội dung bước 2 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gà sau khi trần -> để ráo nước. Tùy vào lượng gà mình muốn ăn, thêm 500g/1 gói sốt Cholimex. Nếu có thể thì để tầm 15 phút cho sốt ngấm hoặc cho vào lò nướng luôn cũng được nha."
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- PHẦN 4: BƯỚC 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp"
+            android:gravity="center_vertical"
+            android:layout_margin="20dp">
+
+            <!-- Icon tròn với số 3 -->
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Nội dung bước 3 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cho gà vào nồi chiên không dầu, setup 10 phút mỗi mặt ở 200°C. Gà nướng sẽ mềm, thơm, không bị ngán mà vẫn giữ được vị ngon."
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- PHẦN 5: ẢNH DƯỚI BƯỚC 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:layout_margin="20dp">
+
+            <ImageView
+                android:id="@+id/image_step_3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/capture7" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Tin nhắn 1 (Ảnh và nội dung) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/canh_ga_nuong_toi"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Bốn Bon và các bạn khác đã thích"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/smile_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="3"
+                                android:textColor="#000000" />
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/heart_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="4"
+                                android:textColor="#000000" />
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/like_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="1"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <!-- Tin nhắn 2 -->
+
+                    <!-- Tin nhắn 3 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginBottom="10dp"
+                        android:background="#F0F0F0"
+                        android:padding="10dp"
+                        android:text=" Gửi cooksnap đi tui ơi!"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/bg_box"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="9dp"
+                        tools:ignore="ExtraText">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Icon nấu ăn"
+                            android:src="@drawable/pin_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nấu Hôm Nay"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginBottom="10dp"
+                        android:background="#E0E0E0"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="ID Công thức 24581963"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Lên sóng vào 18 tháng 3, 2025"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Cập nhật vào 18 tháng 3, 2025"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Thông tin người gửi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/anh_dau_bep" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Lên sóng bởi"
+                                android:textColor="#000000"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tấn Tài"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- Thanh nhập liệu -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D3D3D3"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="5"
+                    android:background="#808080"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Kết bạn bếp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+
+
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:context=".AllActivity">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Các thành phần khác trong activity_all.xml ở trên đây -->
+
+                    <!-- Tiêu đề -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Các món tương tự"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="24dp" />
+
+                    <!-- Grid 2x2 các món -->
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="20dp">
+
+                        <!-- Món 1 -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/bg_card">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/suon_chay" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:background="#80000000"
+                                    android:text="Sườn chay nướng mắc mật"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:padding="8dp" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="#212121"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sườn non lúa mạch (hoặc sườn non chay),Gia vị mắc mật(xem hình).Hạt nm chay,nước tương,Dầu ăn"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="15sp"
+                                    android:maxLines="5"
+                                    android:ellipsize="end" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="6dp"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:src="@drawable/gordon" />
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Thái Hoà"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12sp"
+                                        android:layout_marginStart="4dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- Món 2 -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/bg_card">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/canh_ga_nuong" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:background="#80000000"
+                                    android:text="Cánh gà nướng quét mật ong"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:padding="8dp" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="#212121"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="cánh gà,rau sà lách,hành,gia vị ướp tỏi,muối đường bột ngọt"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="15sp"
+                                    android:maxLines="5"
+                                    android:ellipsize="end" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="6dp"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:src="@drawable/dau_bep1" />
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Phương Nam"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12sp"
+                                        android:layout_marginStart="4dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/bg_card">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ga_nuong_mac_khen" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:background="#80000000"
+                                    android:text="Gà nướng hạt dổi mắc khén"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:padding="8dp" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="#212121"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="gà ta,tỏi nhỡ,hành nhỡ,có ngọn mắc khén,hạt dổi(2 hạt ướp,4 hạt giã chấm)"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="15sp"
+                                    android:maxLines="5"
+                                    android:ellipsize="end" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="6dp"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:src="@drawable/dau_bepp2" />
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Thành Công"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12sp"
+                                        android:layout_marginStart="4dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/bg_card">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/suon_non_chay" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:background="#80000000"
+                                    android:text="Sườn nướng chay"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:padding="8dp" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="#212121"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="5 miếng sườn chay
+                                          1 củ tỏi băm (nếu thích, không thì có thể thay bằng hành boa rô)
+                                           Gia vị: Dầu điều, tương cà, tương ớt, rượu Mai Quế Lộ"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="15sp"
+                                    android:maxLines="5"
+                                    android:ellipsize="end" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="6dp"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:src="@drawable/dau_bep3" />
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Nguyễn Nam"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12sp"
+                                        android:layout_marginStart="4dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- Món 2 -->
+                        <!-- Sao chép block trên và thay ảnh/text cho từng món khác nhau -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/bg_card">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ga_nckd" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:background="#80000000"
+                                    android:text="Gà nướng lá mắc mật"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:padding="8dp" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="#212121"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cánh gà,gia vị ướp:mt ong,xì dầu,dầu hào.!"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="13sp"
+                                    android:maxLines="2"
+                                    android:ellipsize="end" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="6dp"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:src="@drawable/dau_bep"
+                                         />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Đức Anh"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12sp"
+                                        android:layout_marginStart="4dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- Món 3 và Món 4: bạn sao chép tương tự như trên -->
+
+                    </GridLayout>
+
+                    <!-- Các thành phần tiếp theo của bạn (tvSavedCount, rvSavedRecipes, v.v.) -->
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+    <include
+        layout="@layout/layout_fab"
+        android:id="@+id/fabContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- BOTTOM NAV LUÔN Ở ĐÁY -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/selector_nav"
+        app:itemTextColor="@color/selector_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:itemIconSize="32dp"
+        app:itemTextAppearanceActive="@android:style/TextAppearance.Medium"
+        app:itemTextAppearanceInactive="@android:style/TextAppearance.Medium"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

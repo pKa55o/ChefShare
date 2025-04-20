@@ -1,0 +1,7 @@
+package com.android.chefshare.view.fragments
+
+import androidx.fragment.app.Fragment
+import com.android.chefshare.R
+
+class AiFragment : Fragment(R.layout.fragment_ai)
+

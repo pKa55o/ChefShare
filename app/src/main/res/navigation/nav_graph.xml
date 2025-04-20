@@ -5,16 +5,16 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.android.chefshare.HomeFragment"
+        android:name="com.android.chefshare.view.fragments.HomeFragment"
         android:label="Home" />
 
     <fragment
         android:id="@+id/aiFragment"
-        android:name="com.android.chefshare.AiFragment"
+        android:name="com.android.chefshare.view.fragments.AiFragment"
         android:label="AI" />
 
     <fragment
         android:id="@+id/storageFragment"
-        android:name="com.android.chefshare.StorageFragment"
+        android:name="com.android.chefshare.view.fragments.StorageFragment"
         android:label="Storage" />
 </navigation>

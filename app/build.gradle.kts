@@ -58,7 +58,6 @@ dependencies {
 
     // Glide (chỉ cần khai báo 1 lần)
     implementation("com.github.bumptech.glide:glide:4.16.0")
-    implementation(libs.androidx.room.common.jvm)
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 
     // Navigation
