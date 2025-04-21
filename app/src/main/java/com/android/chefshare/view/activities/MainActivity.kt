@@ -187,7 +187,6 @@ class MainActivity : AppCompatActivity() {
         tvUsername.text = name ?: "Ẩn danh"
         tvHandle.text = email ?: "Không rõ"
         tvUserId.text = "ID: ${uid ?: "Không rõ"}"
-
         if (!photoUrl.isNullOrEmpty()) {
             Glide.with(context)
                 .load(photoUrl)
