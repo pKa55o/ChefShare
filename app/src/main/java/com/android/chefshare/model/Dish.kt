@@ -6,4 +6,3 @@ data class Dish(
     val author: String,
     val imageUrl: String
 )
-

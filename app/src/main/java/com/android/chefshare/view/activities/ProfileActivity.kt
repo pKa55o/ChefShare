@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.android.chefshare.R
-import com.android.chefshare.controller.UserManager
+import com.android.chefshare.UserManager
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 

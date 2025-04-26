@@ -63,6 +63,7 @@ class MyRecipeStorageActivity : AppCompatActivity() {
             imgHeaderAvatar.setImageResource(R.drawable.ic_person) // Dùng icon thay thế
         }
 
+
         val fabAddRecipe = findViewById<FloatingActionButton>(R.id.fabAddRecipe)
         fabAddRecipe.setOnClickListener {
             val intent = Intent(this, UploadRecipeActivity::class.java)
