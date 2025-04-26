@@ -6,7 +6,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT * FROM thuthach";
+$sql = "SELECT * FROM dungcu";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
