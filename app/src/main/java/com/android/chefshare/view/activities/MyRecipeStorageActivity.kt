@@ -8,7 +8,6 @@ import android.widget.TextView
 import android.widget.Toast
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -62,7 +61,6 @@ class MyRecipeStorageActivity : AppCompatActivity() {
             imgHeaderAvatar.visibility = View.VISIBLE
             imgHeaderAvatar.setImageResource(R.drawable.ic_person) // Dùng icon thay thế
         }
-
 
         val fabAddRecipe = findViewById<FloatingActionButton>(R.id.fabAddRecipe)
         fabAddRecipe.setOnClickListener {

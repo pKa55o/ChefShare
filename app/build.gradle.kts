@@ -1,8 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
     id("com.google.gms.google-services") // 👈 Plugin google-services
+
+    id("com.google.devtools.ksp") // ksp for Room Data
+
 }
+
 
 android {
     namespace = "com.android.chefshare"
@@ -49,21 +54,26 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
 
+    // Room Data
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
     // Firebase Auth
-    implementation("com.google.firebase:firebase-auth:22.3.1")
+    implementation(libs.firebase.auth)
 
-    // Google Sign-In
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    // Google Sign-In;
+    implementation(libs.play.services.auth)
 
-    // Glide (chỉ cần khai báo 1 lần)
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+    // Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
 
     // Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation (libs.circleimageview)
 
     // Testing
     testImplementation(libs.junit)

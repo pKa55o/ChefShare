@@ -1,4 +1,3 @@
-a chef is cooking an app
 # ChefShare 🍳
 
 **ChefShare** là một nền tảng chia sẻ công thức nấu ăn giúp mọi người dễ dàng khám phá, lưu trữ và chia sẻ những món ăn yêu thích mỗi ngày. Với cộng đồng đầu bếp từ nghiệp dư đến chuyên nghiệp, ChefShare là nơi để bạn tìm cảm hứng ẩm thực và lan tỏa niềm đam mê nấu nướng.

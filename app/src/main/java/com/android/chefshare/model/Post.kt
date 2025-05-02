@@ -1,17 +1,21 @@
 package com.android.chefshare.model
 
-data class Post (
+import java.io.Serializable
+
+data class Post(
     val idBaidang: String,
-    val idNguoidung: String?,
-    val idPhanloai: Int?,
-    val idCachnau: String?,
-    val idDungcu: String?,
-    val idNguyenlieu: String?,
-    val thumbnail: String?,
-    val mota: String?,
-    val thoigianau: Int?,
-    val khauphan: Int?,
-    val chidan: String?,
-    val soluongNguoithich: String?,
-    val thoigiandang: Long?
-)
+    val idNguoidung: String,
+    val idPhanloai: Int,
+    val idCachnau: Int? = null,
+    val idDungcu: Int? = null,
+    val idNguyenlieu: Int? = null,
+    val thumbnail: String = "",
+    val mota: String = "",
+    val thoigianau: Int = 0,
+    val khauphan: Int = 0,
+    val chidan: String = "",
+    val soluongNguoithich: String = "0",
+    val thoigiandang: Long? = null
+) : Serializable
+
+

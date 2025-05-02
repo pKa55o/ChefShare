@@ -1,24 +1,33 @@
-package com.android.chefshare
+package com.android.chefshare.view.activities
 
-import androidx.test.platform.app.InstrumentationRegistry
-import androidx.test.ext.junit.runners.AndroidJUnit4
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
+import com.android.chefshare.MyRecipeStorageActivity
+import com.android.chefshare.R
+import com.android.chefshare.controller.UserManager
+import com.bumptech.glide.Glide
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
-import org.junit.Test
-import org.junit.runner.RunWith
+class MainActivity : AppCompatActivity() {
 
-import org.junit.Assert.*
 
-/**
- * Instrumented test, which will execute on an Android device.
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
-@RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
-    @Test
-    fun useAppContext() {
-        // Context of the app under test.
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.android.chefshare", appContext.packageName)
-    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_main)
+        print("zxc")
+
+
+        }
+
 }

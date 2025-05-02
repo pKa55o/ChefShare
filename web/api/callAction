@@ -1,0 +1,4 @@
+<?php
+$action = $_GET['action'];
+include 'action/'.$action;
+?>

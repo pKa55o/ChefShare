@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.android.chefshare.LoginActivity
 import com.android.chefshare.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient

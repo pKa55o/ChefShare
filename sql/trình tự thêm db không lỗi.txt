@@ -1,0 +1,20 @@
+trình tự thêm db không lỗi : 
+
+0.bảng nguoidung
+***auto_increasement với các loại để values trường id null 
+1.bảng cachnau 
+INSERT INTO `cachnau` (`id_cachnau`, `cachnau`) VALUES (NULL, 'Chiên');
+2.bảng dungcu
+INSERT INTO `dungcu` (`id_dungcu`, `dungcu`) VALUES (NULL, 'nồi chiên không dầu');
+3.bảng nguyenlieu
+INSERT INTO `nguyenlieu` (`id_nguyenlieu`, `nguyenlieu`) VALUES (NULL, 'cà chua');
+4.bảng thongbao
+INSERT INTO `thongbao` (`id_thongbao`, `tenthongbao`, `noidung`, `thoigianthongbao`) VALUES (NULL, 'Cập nhật hệ thống', 'cập nhật lần 1', current_timestamp());
+
+5. baidang
+6. baidang_*
+
+
+============================
+
+<<BỔ SUNG VÀ SỬA CHỮA>>

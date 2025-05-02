@@ -1,4 +1,4 @@
-1<?php
+<?php
 include '../conn.php';
 
 if ($conn->connect_error) {
@@ -6,7 +6,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT * FROM baidang";
+$sql = "SELECT * FROM chidan";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

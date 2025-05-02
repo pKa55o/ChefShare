@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.android.chefshare.MyRecipeStorageActivity
 import com.android.chefshare.R
-import com.android.chefshare.controller.UserManager
+import com.android.chefshare.UserManager
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
@@ -29,9 +29,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
+
+        Log.d("zxc","zxc")
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
 
@@ -61,7 +62,12 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this, PremiumActivity::class.java)
                     startActivity(intent)
                 }
-                R.id.nav_challenges -> showToast("Thử Thách")
+                //su kien
+                R.id.nav_challenges -> {
+                    val intent = Intent(this, EventActivity::class.java)
+                    startActivity(intent)
+                }
+
                 R.id.nav_settings -> {
                     val intent = Intent(this, SettingsActivity::class.java)
                     startActivity(intent)
