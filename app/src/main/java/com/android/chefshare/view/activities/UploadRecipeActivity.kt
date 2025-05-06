@@ -33,18 +33,17 @@ class UploadRecipeActivity : AppCompatActivity() {
         setupImagePickers()
         setupEventListeners()
 
-        addIngredientField() // Thêm 1 ô nguyên liệu mặc định
-        addStepView() // Thêm bước đầu tiên
+        addIngredientField()
+        addToolField()
+        addStepView()
     }
 
     private fun setupEventListeners() {
         binding.imageContainer.setOnClickListener { pickMainImage() }
         binding.btnAddIngredient.setOnClickListener { addIngredientField() }
+        binding.btnAddTool.setOnClickListener { addToolField() }
         binding.btnAddStep.setOnClickListener { addStepView() }
         binding.btnBack.setOnClickListener { finish() }
-//        binding.btnSaveDraft.setOnClickListener {
-//            Toast.makeText(this, "Lưu nháp thành công", Toast.LENGTH_SHORT).show()
-//        }
         binding.btnPublish.setOnClickListener { uploadRecipe() }
     }
 
@@ -63,7 +62,6 @@ class UploadRecipeActivity : AppCompatActivity() {
             result.data?.data?.let { uri ->
                 if (currentStepIndex in stepImageUris.indices) {
                     stepImageUris[currentStepIndex] = uri
-
                     val frameIndex = currentStepIndex * 2 + 1
                     val frameLayout = binding.stepsContainer.getChildAt(frameIndex) as FrameLayout
                     frameLayout.removeAllViews()
@@ -107,8 +105,21 @@ class UploadRecipeActivity : AppCompatActivity() {
                 setMargins(0, 8, 0, 0)
             }
         }
-
         binding.ingredientContainer.addView(editText)
+    }
+
+    private fun addToolField() {
+        val editText = EditText(this).apply {
+            hint = "Ví dụ: Nồi chiên không dầu"
+            setBackgroundResource(R.drawable.bg_rounded_border_grey)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(0, 8, 0, 0)
+            }
+        }
+        binding.toolContainer.addView(editText)
     }
 
     private fun addStepView() {
@@ -124,7 +135,7 @@ class UploadRecipeActivity : AppCompatActivity() {
 
         val stepLabel = TextView(this).apply {
             text = stepIndex.toString()
-            setTextColor(resources.getColor(android.R.color.white, null))
+            setTextColor(Color.WHITE)
             setBackgroundResource(R.drawable.bg_circle_red)
             textSize = 16f
             gravity = Gravity.CENTER
@@ -145,30 +156,30 @@ class UploadRecipeActivity : AppCompatActivity() {
         stepLayout.addView(stepEditText)
 
         val stepImageFrame = FrameLayout(this).apply {
-            setBackgroundColor(resources.getColor(android.R.color.darker_gray, null))
+            setBackgroundColor(Color.DKGRAY)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, 300
             ).apply { setMargins(0, 8, 0, 16) }
         }
 
-        val chooseImageLayout = LinearLayout(this@UploadRecipeActivity).apply {
+        val chooseImageLayout = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.CENTER
             layoutParams = FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT
             )
-            setBackgroundColor(Color.parseColor("#EEEEEE")) // nền xám nhạt
+            setBackgroundColor(Color.parseColor("#EEEEEE"))
 
             val icon = ImageView(this@UploadRecipeActivity).apply {
                 setImageResource(R.drawable.ic_add_a_photo)
-                setColorFilter(Color.parseColor("#555555")) // icon xám đậm hơn
-                layoutParams = LinearLayout.LayoutParams(64, 64) // icon size
+                setColorFilter(Color.parseColor("#555555"))
+                layoutParams = LinearLayout.LayoutParams(64, 64)
             }
 
             val label = TextView(this@UploadRecipeActivity).apply {
                 text = "Chọn ảnh"
-                setTextColor(Color.parseColor("#555555")) // chữ xám đậm hơn
+                setTextColor(Color.parseColor("#555555"))
                 textSize = 14f
                 setPadding(0, 8, 0, 0)
                 gravity = Gravity.CENTER
@@ -177,7 +188,6 @@ class UploadRecipeActivity : AppCompatActivity() {
             addView(icon)
             addView(label)
         }
-
 
         stepImageFrame.addView(chooseImageLayout)
 
@@ -207,6 +217,15 @@ class UploadRecipeActivity : AppCompatActivity() {
             }
         }
 
+        val tools = mutableListOf<String>()
+        for (i in 0 until binding.toolContainer.childCount) {
+            val view = binding.toolContainer.getChildAt(i)
+            if (view is EditText) {
+                val text = view.text.toString().trim()
+                if (text.isNotEmpty()) tools.add(text)
+            }
+        }
+
         val steps = mutableListOf<String>()
         for (i in 0 until binding.stepsContainer.childCount step 2) {
             val stepLayout = binding.stepsContainer.getChildAt(i) as LinearLayout
@@ -217,7 +236,7 @@ class UploadRecipeActivity : AppCompatActivity() {
 
         Toast.makeText(
             this,
-            "✅ Tên: $name\n📄 Mô tả: $desc\n🥗 ${ingredients.size} nguyên liệu\n👨‍🍳 ${steps.size} bước",
+            "✅ Tên: $name\n📄 Mô tả: $desc\n🥗 ${ingredients.size} nguyên liệu\n🔧 ${tools.size} dụng cụ\n👨‍🍳 ${steps.size} bước",
             Toast.LENGTH_LONG
         ).show()
 

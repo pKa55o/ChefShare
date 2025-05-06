@@ -14,6 +14,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.android.chefshare.view.activities.UserProfileActivity
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_profile -> startActivity(Intent(this, ProfileActivity::class.java))
+                R.id.nav_profile -> startActivity(Intent(this, UserProfileActivity::class.java))
                 R.id.nav_notifications -> startActivity(Intent(this, NotificationActivity::class.java))
                 R.id.liked -> startActivity(Intent(this, RecentDishesActivity::class.java))
                 R.id.nav_challenges -> startActivity(Intent(this, EventActivity::class.java))

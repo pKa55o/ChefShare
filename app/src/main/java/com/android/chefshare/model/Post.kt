@@ -2,7 +2,7 @@ package com.android.chefshare.model
 
 import java.io.Serializable
 
-data class Post(
+data class  Post(
     val idBaidang: String,
     val idNguoidung: String = "",
     val idPhanloai: Int = 0,
@@ -16,6 +16,6 @@ data class Post(
     val chidan: String = "",
     val soluongNguoithich: String = "0",
     val thoigiandang: Long? = null,
-    val thumbnailRes: Int = 0 // thêm trường này
+    val thumbnailRes: Int = 0 
 
 ) : Serializable

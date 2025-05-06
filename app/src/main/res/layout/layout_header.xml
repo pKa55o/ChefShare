@@ -2,22 +2,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="140dp">
+    android:layout_height="70dp">
 
     <!-- Ảnh nền có bo góc dưới -->
     <ImageView
         android:id="@+id/imgHeaderBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_lu_1"
         android:background="@drawable/bg_header_bottom_rounded"
         android:clipToOutline="true"
         android:outlineProvider="background"
-        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_lu_1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Nội dung nằm đè lên ảnh -->
     <LinearLayout

@@ -153,7 +153,7 @@ class MyRecipeStorageActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_profile -> {
-                    val intent = Intent(this, ProfileActivity::class.java)
+                    val intent = Intent(this, UserProfileActivity::class.java)
                     startActivity(intent)
                 }
 //                R.id.nav_friends -> showToast("Các Bạn Bếp")

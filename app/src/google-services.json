@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "69026075891",
+    "firebase_url": "https://chefshare-cf124-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "chefshare-cf124",
     "storage_bucket": "chefshare-cf124.firebasestorage.app"
   },
@@ -13,6 +14,30 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "69026075891-1tpj499d3ii699nsp5pl060j06g0u1bv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.chefshare",
+            "certificate_hash": "c2ebb853c87054c7eda6ef02ba45fd9982c37db5"
+          }
+        },
+        {
+          "client_id": "69026075891-630frhc0r87cpvs5ephmh1nns8mekf9a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.chefshare",
+            "certificate_hash": "c1892735cba46687312c03a880e42c4f96f7ac2b"
+          }
+        },
+        {
+          "client_id": "69026075891-8oadrhpukb6hc1nesics7de0u5itfiv2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.chefshare",
+            "certificate_hash": "12c348ce018f4fe2021ae749e64293bcb172d15b"
+          }
+        },
         {
           "client_id": "69026075891-c77s7lpgg35rlcrij72co5gb27gjfp61.apps.googleusercontent.com",
           "client_type": 1,

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- HEADER CỐ ĐỊNH: Bọc bằng FrameLayout để đổi nền -->
-    <!-- HEADER CỐ ĐỊNH: sử dụng ImageView để làm nền -->
+    <!-- HEADER với ảnh nền -->
     <FrameLayout
         android:id="@+id/headerWrapper"
         android:layout_width="0dp"
@@ -15,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Nền ảnh bg_lu_2 -->
+        <!-- Nền ảnh -->
         <ImageView
             android:id="@+id/headerBg"
             android:layout_width="match_parent"
@@ -35,7 +34,6 @@
             android:background="@android:color/transparent"
             android:elevation="8dp">
 
-            <!-- Nút quay lại -->
             <ImageButton
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
@@ -49,7 +47,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <!-- Nút đăng bài -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPublish"
                 android:layout_width="wrap_content"
@@ -63,8 +60,7 @@
         </LinearLayout>
     </FrameLayout>
 
-
-    <!-- PHẦN NỘI DUNG CUỘN -->
+    <!-- SCROLL NỘI DUNG -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -190,6 +186,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+ Nguyên liệu"
+                android:textColor="#FFA000"
+                android:layout_marginTop="4dp" />
+
+            <!-- Dụng cụ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dụng Cụ"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <LinearLayout
+                android:id="@+id/toolContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/btnAddTool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ Dụng cụ"
                 android:textColor="#FFA000"
                 android:layout_marginTop="4dp" />
 
