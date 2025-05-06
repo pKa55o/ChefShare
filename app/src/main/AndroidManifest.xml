@@ -13,46 +13,88 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChefShare"
         tools:targetApi="31"
+        android:networkSecurityConfig="@xml/network_security_config">
 
-        android:networkSecurityConfig="@xml/network_security_config"
-        >
-        <activity
-            android:name=".api.testapi"
-            android:exported="true" />
-
+        <!-- MainActivity with intent-filter for LAUNCHER -->
         <activity
             android:name=".view.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activities.LoginActivity" />
-        <activity android:name=".view.activities.UploadRecipeActivity" />
-        <activity android:name=".view.activities.PremiumActivity" />
-        <activity android:name=".MyRecipeStorageActivity" />
-        <activity android:name=".view.activities.SearchActivity" />
-        <activity android:name=".view.activities.SearchResultsActivity" />
-        <activity android:name=".view.activities.AIRecipeActivity" />
-        <activity android:name=".view.activities.SettingsActivity" />
-        <activity android:name=".view.activities.RecentDishesActivity" />
-        <activity android:name=".view.activities.ProfileActivity" />
-        <activity android:name=".view.activities.EditProfileActivity" />
+
+        <!-- LoginActivity without intent-filter -->
+        <activity android:name=".view.activities.LoginActivity" android:exported="true" />
+
+        <!-- UploadRecipeActivity without intent-filter -->
+        <activity android:name=".view.activities.UploadRecipeActivity" android:exported="true" />
+
+        <!-- PremiumActivity without intent-filter -->
+        <activity android:name=".view.activities.PremiumActivity" android:exported="true" />
+
+        <!-- MyRecipeStorageActivity without intent-filter -->
+        <activity android:name="com.android.chefshare.MyRecipeStorageActivity" android:exported="true" />
+
+        <!-- SearchActivity without intent-filter -->
+        <activity android:name=".view.activities.SearchActivity" android:exported="true" />
+
+        <!-- SearchResultsActivity without intent-filter -->
+        <activity android:name=".view.activities.SearchResultsActivity" android:exported="true" />
+
+        <!-- AIRecipeActivity without intent-filter -->
+        <activity android:name=".view.activities.AIRecipeActivity" android:exported="true" />
+
+        <!-- SettingsActivity without intent-filter -->
+        <activity android:name=".view.activities.SettingsActivity" android:exported="true" />
+
+        <!-- RecentDishesActivity without intent-filter -->
+        <activity android:name=".view.activities.RecentDishesActivity" android:exported="true" />
+
+        <!-- ProfileActivity without intent-filter -->
+        <activity android:name=".view.activities.ProfileActivity" android:exported="true" />
+
+        <!-- EditProfileActivity without intent-filter -->
+        <activity android:name=".view.activities.EditProfileActivity" android:exported="true" />
+
+        <!-- DishDetailActivity with exported and intent-filter -->
         <activity
             android:name=".view.activities.DishDetailActivity"
-            android:exported="true" />
-        <activity android:name=".view.activities.NotificationActivity" />
-        <activity android:name=".view.activities.FeedbackActivity" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- NotificationActivity without intent-filter -->
+        <activity android:name=".view.activities.NotificationActivity" android:exported="true" />
+
+        <!-- FeedbackActivity without intent-filter -->
+        <activity android:name=".view.activities.FeedbackActivity" android:exported="true" />
+
+        <!-- UserManagementActivity with exported and intent-filter -->
         <activity
             android:name=".view.activities.admin.UserManagementActivity"
-            android:exported="true" />
-        <activity android:name=".view.activities.admin.PostDetailActivity" />
-        <activity android:name=".view.activities.admin.PostManagementActivity" />
-        <activity android:name=".view.activities.EventActivity" />
-        <activity android:name=".view.activities.RecipeDetailActivity" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
+        <!-- PostDetailActivity without intent-filter -->
+        <activity android:name=".view.activities.admin.PostDetailActivity" android:exported="true" />
+
+        <!-- PostManagementActivity without intent-filter -->
+        <activity android:name=".view.activities.admin.PostManagementActivity" android:exported="true" />
+
+        <!-- EventActivity without intent-filter -->
+        <activity android:name=".view.activities.EventActivity" android:exported="true" />
+
+        <!-- RecipeDetailActivity without intent-filter -->
+        <activity android:name=".view.activities.RecipeDetailActivity" android:exported="true" />
 
     </application>
 
