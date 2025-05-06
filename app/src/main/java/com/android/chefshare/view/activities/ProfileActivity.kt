@@ -23,17 +23,14 @@ class ProfileActivity : AppCompatActivity() {
 
         // Ánh xạ view
         btnBack = findViewById(R.id.btnBack)
-        btnEditProfile = findViewById(R.id.btnEditProfile)
         imgAvatar = findViewById(R.id.imgAvatar)
         tvFullName = findViewById(R.id.tvFullName)
-        tvUserId = findViewById(R.id.tvUserId)
 
         // Lấy thông tin user từ UserManager
         val user = UserManager.currentUser
 
         if (user != null) {
             tvFullName.text = user.displayName ?: "Ẩn danh"
-            tvUserId.text = "ID: ${user.uid ?: "Không rõ"}"
 
             val avatarUrl = user.photoUrl?.toString()
             if (!avatarUrl.isNullOrEmpty()) {
@@ -54,10 +51,6 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
 
-        // Nút sửa thông tin
-        btnEditProfile.setOnClickListener {
-            val intent = Intent(this, EditProfileActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 }

@@ -42,9 +42,9 @@ class UploadRecipeActivity : AppCompatActivity() {
         binding.btnAddIngredient.setOnClickListener { addIngredientField() }
         binding.btnAddStep.setOnClickListener { addStepView() }
         binding.btnBack.setOnClickListener { finish() }
-        binding.btnSaveDraft.setOnClickListener {
-            Toast.makeText(this, "Lưu nháp thành công", Toast.LENGTH_SHORT).show()
-        }
+//        binding.btnSaveDraft.setOnClickListener {
+//            Toast.makeText(this, "Lưu nháp thành công", Toast.LENGTH_SHORT).show()
+//        }
         binding.btnPublish.setOnClickListener { uploadRecipe() }
     }
 

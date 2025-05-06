@@ -1,15 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#FFFFFF">
+    android:background="#000000"
+    android:padding="16dp">
 
     <LinearLayout
+        android:id="@+id/layoutRoot"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
+        <!-- Ảnh đại diện -->
         <ImageView
             android:id="@+id/imgRecipe"
             android:layout_width="match_parent"
@@ -17,29 +19,58 @@
             android:scaleType="centerCrop"
             android:src="@drawable/sample_food" />
 
+        <!-- Tiêu đề -->
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tên món ăn"
+            android:text="Canh chua cá dìa"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold" />
+
+        <!-- Thời gian + khẩu phần -->
+        <TextView
+            android:id="@+id/tvTimePortion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⏱ 0 phút | 👨‍👩‍👧‍👦 0 người"
+            android:textColor="#CCCCCC"
+            android:layout_marginTop="4dp" />
+
+        <!-- NGUYÊN LIỆU -->
+        <TextView
+            android:text="Nguyên liệu"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:textColor="#FFEB3B"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/tvIngredients"
+        <LinearLayout
+            android:id="@+id/ingredientsContainer"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nguyên liệu:"
-            android:textSize="16sp"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="8dp" />
 
+        <!-- CÁCH LÀM -->
         <TextView
-            android:id="@+id/tvInstructions"
+            android:text="Cách làm"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFEB3B"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/stepsContainer"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cách làm:"
-            android:textSize="16sp"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 </ScrollView>

@@ -37,5 +37,5 @@ data class baiDangDaThich(
 
     @ColumnInfo(name = "id_nguoidung")
     @SerializedName("id_nguoidung")
-    val idDaThich: Int
+    val idDaThich: String
 )

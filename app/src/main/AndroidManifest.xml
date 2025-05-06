@@ -53,6 +53,7 @@
         <activity android:name=".view.activities.EventActivity" />
         <activity android:name=".view.activities.RecipeDetailActivity" />
 
+
     </application>
 
 </manifest>

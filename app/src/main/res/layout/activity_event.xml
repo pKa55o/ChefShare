@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#121212"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/eventRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="#121212">
 
-    <ImageView
-        android:id="@+id/imgBanner"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerEvent"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/banner_event" />
-
-    <TextView
-        android:id="@+id/tvEventTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cuộc Thi Chia Sẻ Công Thức - Tháng 5"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="8dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRecipes"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+</androidx.constraintlayout.widget.ConstraintLayout>

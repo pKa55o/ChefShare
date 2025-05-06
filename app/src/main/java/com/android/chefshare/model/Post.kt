@@ -4,8 +4,8 @@ import java.io.Serializable
 
 data class Post(
     val idBaidang: String,
-    val idNguoidung: String,
-    val idPhanloai: Int,
+    val idNguoidung: String = "",
+    val idPhanloai: Int = 0,
     val idCachnau: Int? = null,
     val idDungcu: Int? = null,
     val idNguyenlieu: Int? = null,
@@ -15,7 +15,7 @@ data class Post(
     val khauphan: Int = 0,
     val chidan: String = "",
     val soluongNguoithich: String = "0",
-    val thoigiandang: Long? = null
+    val thoigiandang: Long? = null,
+    val thumbnailRes: Int = 0 // thêm trường này
+
 ) : Serializable
-
-

@@ -10,3 +10,4 @@ class DishDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dish_detail) // Liên kết với file XML
     }
 }
+

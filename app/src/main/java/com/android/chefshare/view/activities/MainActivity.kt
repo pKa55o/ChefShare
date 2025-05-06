@@ -8,9 +8,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
-import com.android.chefshare.MyRecipeStorageActivity
-import com.android.chefshare.R
-import com.android.chefshare.UserManager
+import com.android.chefshare.*
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
@@ -31,12 +29,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        Log.d("zxc","zxc")
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
 
-        // Gán thông tin user vào header view của Navigation Drawer
+        // Gán thông tin user vào header Navigation Drawer
         val headerView = navigationView.getHeaderView(0)
         bindUserHeader(headerView, drawerLayout, navigationView)
 
@@ -45,98 +41,75 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_profile -> {
-                    val intent = Intent(this, ProfileActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_notifications -> {
-                    val intent = Intent(this, NotificationActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_stats -> showToast("Thống kê bếp")
-                R.id.nav_recent -> {
-                    val intent = Intent(this, RecentDishesActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_premium -> {
-                    val intent = Intent(this, PremiumActivity::class.java)
-                    startActivity(intent)
-                }
-                //su kien
-                R.id.nav_challenges -> {
-                    val intent = Intent(this, EventActivity::class.java)
-                    startActivity(intent)
-                }
-
-                R.id.nav_settings -> {
-                    val intent = Intent(this, SettingsActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_faq -> showToast("Câu hỏi thường gặp")
-                R.id.nav_feedback -> {
-                    val intent = Intent(this, FeedbackActivity::class.java)
-                    startActivity(intent)
-                }
+                R.id.nav_profile -> startActivity(Intent(this, ProfileActivity::class.java))
+                R.id.nav_notifications -> startActivity(Intent(this, NotificationActivity::class.java))
+                R.id.liked -> startActivity(Intent(this, RecentDishesActivity::class.java))
+                R.id.nav_challenges -> startActivity(Intent(this, EventActivity::class.java))
+                R.id.nav_settings -> startActivity(Intent(this, SettingsActivity::class.java))
+                R.id.nav_feedback -> startActivity(Intent(this, FeedbackActivity::class.java))
             }
             drawerLayout.closeDrawer(navigationView)
             true
         }
 
+        // Danh sách nguyên liệu phổ biến
         val glIngredients = findViewById<GridLayout>(R.id.glIngredients)
         displayIngredientSquares(glIngredients, popularIngredients)
 
+        // Danh sách nguyên liệu mới lên sóng
         val llRecentIngredients = findViewById<LinearLayout>(R.id.llRecentIngredients)
         displayIngredientHorizontally(llRecentIngredients, newIngredients)
 
+        // Nút chuông
         val btnNotifications = findViewById<View>(R.id.btnNotification)
-        btnNotifications.setOnClickListener{
-            val intent = Intent(this, NotificationActivity::class.java)
-            startActivity(intent)
+        btnNotifications.setOnClickListener {
+            startActivity(Intent(this, NotificationActivity::class.java))
         }
 
+        // Nút FAB đăng bài
         val fab = findViewById<View>(R.id.fabContainer)
         val fabAddRecipe = fab.findViewById<FloatingActionButton>(R.id.fabAddRecipe)
         fabAddRecipe.setOnClickListener {
-            val intent = Intent(this, UploadRecipeActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, UploadRecipeActivity::class.java))
         }
 
+        // Click thanh tìm kiếm
         val etSearchFake = findViewById<View>(R.id.etSearchFake)
-        etSearchFake.setOnClickListener {
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
-        }
-
         val searchBarContainer = findViewById<View>(R.id.searchBarContainer)
-        searchBarContainer.setOnClickListener {
-            Log.d("MainActivity", "Search bar clicked")
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
-        }
 
+        val searchIntent = Intent(this, SearchActivity::class.java)
+        etSearchFake.setOnClickListener { startActivity(searchIntent) }
+        searchBarContainer.setOnClickListener { startActivity(searchIntent) }
+
+        // Nút đăng ký Premium
         val btnSubscribe = findViewById<Button>(R.id.btnSubscribe)
         btnSubscribe.setOnClickListener {
-            val intent = Intent(this, PremiumActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, PremiumActivity::class.java))
         }
 
+        // Bottom Navigation
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
         bottomNavigation.selectedItemId = R.id.nav_home
+
         bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> true
+
                 R.id.nav_ai -> {
-                    val intent = Intent(this, AIRecipeActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                    startActivity(intent)
+                    startActivity(Intent(this, UploadRecipeActivity::class.java))
+                    bottomNavigation.postDelayed({
+                        bottomNavigation.selectedItemId = R.id.nav_home
+                    }, 200)
                     true
                 }
+
                 R.id.nav_storage -> {
                     val intent = Intent(this, MyRecipeStorageActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                     startActivity(intent)
                     true
                 }
+
                 else -> false
             }
         }
@@ -172,29 +145,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
     private fun bindUserHeader(header: View, drawerLayout: DrawerLayout, navigationView: NavigationView) {
         val imgAvatar = header.findViewById<ImageView>(R.id.imgAvatar)
         val tvUsername = header.findViewById<TextView>(R.id.tvUsername)
         val tvHandle = header.findViewById<TextView>(R.id.tvHandle)
-        val tvUserId = header.findViewById<TextView>(R.id.tvUserId)
 
         val currentUser = FirebaseAuth.getInstance().currentUser
-        val context = this
-
         val name = currentUser?.displayName
         val email = currentUser?.email
-        val uid = currentUser?.uid
         val photoUrl = currentUser?.photoUrl?.toString()
 
         tvUsername.text = name ?: "Ẩn danh"
         tvHandle.text = email ?: "Không rõ"
-        tvUserId.text = "ID: ${uid ?: "Không rõ"}"
+
         if (!photoUrl.isNullOrEmpty()) {
-            Glide.with(context)
+            Glide.with(this)
                 .load(photoUrl)
                 .placeholder(R.drawable.ic_person)
                 .circleCrop()
@@ -205,7 +170,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bindTopHeader() {
-        val imgHeaderAvatar = findViewById<ImageView>(R.id.imgHeaderAvatar)
+        val imgHeaderAvatar = findViewById<ImageView>(R.id.imgAvatar)
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
 
@@ -221,13 +186,11 @@ class MainActivity : AppCompatActivity() {
                 .circleCrop()
                 .into(imgHeaderAvatar)
         } else {
-            imgHeaderAvatar.setImageResource(R.drawable.ic_person) // 👉 hiển thị icon mặc định
+            imgHeaderAvatar.setImageResource(R.drawable.ic_person)
         }
 
-        // Thêm sự kiện click để mở Drawer
         imgHeaderAvatar.setOnClickListener {
             drawerLayout.openDrawer(navigationView)
         }
-
     }
 }

@@ -35,12 +35,19 @@ CREATE TABLE `baidang` (
   `id_nguoidung` varchar(255) DEFAULT NULL,
   `id_phanloai` int(11) DEFAULT NULL,
   `tieude` varchar(80) NOT NULL,
-  `thumbnail` blob DEFAULT NULL,
+  `thumbnail` varchar(255) DEFAULT NULL,
   `mota` varchar(255) DEFAULT NULL,
   `thoigiannau` int(11) DEFAULT NULL,
   `khauphan` int(11) DEFAULT NULL,
   `thoigiandang` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `baidang`
+--
+
+INSERT INTO `baidang` (`id_baidang`, `id_nguoidung`, `id_phanloai`, `tieude`, `thumbnail`, `mota`, `thoigiannau`, `khauphan`, `thoigiandang`) VALUES
+(3040175, 'HFhEieJFNRNetJysnXCEi3VEtFL2', 1, 'Tiêu đề 2', 'path/to/thumbnail2.png', 'zxc2', 5, 2, '2025-05-06 02:00:53');
 
 -- --------------------------------------------------------
 
@@ -53,6 +60,13 @@ CREATE TABLE `baidang_cachnau` (
   `id_cachnau` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `baidang_cachnau`
+--
+
+INSERT INTO `baidang_cachnau` (`id_baidang`, `id_cachnau`) VALUES
+(3040175, 1113);
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +77,13 @@ CREATE TABLE `baidang_chidan` (
   `id_baidang` int(11) NOT NULL,
   `id_chidan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `baidang_chidan`
+--
+
+INSERT INTO `baidang_chidan` (`id_baidang`, `id_chidan`) VALUES
+(3040175, 2005);
 
 -- --------------------------------------------------------
 
@@ -76,6 +97,13 @@ CREATE TABLE `baidang_dathich` (
   `thoigianthich` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `baidang_dathich`
+--
+
+INSERT INTO `baidang_dathich` (`id_baidang`, `id_nguoidung`, `thoigianthich`) VALUES
+(3040175, 'HFhEieJFNRNetJysnXCEi3VEtFL2', '2025-05-06 02:05:21');
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +115,13 @@ CREATE TABLE `baidang_dungcu` (
   `id_dungcu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `baidang_dungcu`
+--
+
+INSERT INTO `baidang_dungcu` (`id_baidang`, `id_dungcu`) VALUES
+(3040175, 3337);
+
 -- --------------------------------------------------------
 
 --
@@ -97,6 +132,13 @@ CREATE TABLE `baidang_nguyenlieu` (
   `id_baidang` int(11) NOT NULL,
   `id_nguyenlieu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `baidang_nguyenlieu`
+--
+
+INSERT INTO `baidang_nguyenlieu` (`id_baidang`, `id_nguyenlieu`) VALUES
+(3040175, 4444);
 
 -- --------------------------------------------------------
 
@@ -120,7 +162,8 @@ INSERT INTO `cachnau` (`id_cachnau`, `cachnau`) VALUES
 (1114, 'lẩu'),
 (1115, 'luộc'),
 (1116, 'hấp'),
-(1117, 'hầm');
+(1117, 'hầm'),
+(1120, 'cách mới');
 
 -- --------------------------------------------------------
 
@@ -133,7 +176,27 @@ CREATE TABLE `chidan` (
   `id_baidang` int(11) NOT NULL,
   `buoc` int(11) NOT NULL,
   `mota` text NOT NULL,
-  `anh` blob NOT NULL
+  `anh` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `chidan`
+--
+
+INSERT INTO `chidan` (`id_chidan`, `id_baidang`, `buoc`, `mota`, `anh`) VALUES
+(2005, 3040175, 1, 'đây là bước 1', 'path/to/b1.png'),
+(2006, 3040175, 2, 'đây là bước 2', 'path/to/b2.png');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `cuocthi_binhchon`
+--
+
+CREATE TABLE `cuocthi_binhchon` (
+  `id_baidang` int(11) NOT NULL,
+  `id_nguoidung` varchar(255) NOT NULL,
+  `trangthai` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -156,7 +219,8 @@ INSERT INTO `dungcu` (`id_dungcu`, `dungcu`) VALUES
 (3334, 'bếp củi'),
 (3335, 'nồi chiên không dầu'),
 (3336, 'bếp ga'),
-(3337, 'than');
+(3337, 'than'),
+(3338, 'dụng cụ mới');
 
 -- --------------------------------------------------------
 
@@ -211,7 +275,8 @@ INSERT INTO `nguyenlieu` (`id_nguyenlieu`, `nguyenlieu`) VALUES
 (4460, 'rau má'),
 (4461, 'cải thảo'),
 (4462, 'khoai tây'),
-(4463, 'giá đỗ');
+(4463, 'giá đỗ'),
+(4464, 'nguyên liệu mới');
 
 -- --------------------------------------------------------
 
@@ -335,6 +400,13 @@ ALTER TABLE `chidan`
   ADD KEY `id_baidang` (`id_baidang`);
 
 --
+-- Chỉ mục cho bảng `cuocthi_binhchon`
+--
+ALTER TABLE `cuocthi_binhchon`
+  ADD PRIMARY KEY (`id_baidang`,`id_nguoidung`),
+  ADD KEY `id_nguoidung` (`id_nguoidung`);
+
+--
 -- Chỉ mục cho bảng `dungcu`
 --
 ALTER TABLE `dungcu`
@@ -379,13 +451,13 @@ ALTER TABLE `thongbao`
 -- AUTO_INCREMENT cho bảng `baidang`
 --
 ALTER TABLE `baidang`
-  MODIFY `id_baidang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3040175;
+  MODIFY `id_baidang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3040176;
 
 --
 -- AUTO_INCREMENT cho bảng `cachnau`
 --
 ALTER TABLE `cachnau`
-  MODIFY `id_cachnau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1120;
+  MODIFY `id_cachnau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1121;
 
 --
 -- AUTO_INCREMENT cho bảng `chidan`
@@ -397,13 +469,13 @@ ALTER TABLE `chidan`
 -- AUTO_INCREMENT cho bảng `dungcu`
 --
 ALTER TABLE `dungcu`
-  MODIFY `id_dungcu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3338;
+  MODIFY `id_dungcu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3339;
 
 --
 -- AUTO_INCREMENT cho bảng `nguyenlieu`
 --
 ALTER TABLE `nguyenlieu`
-  MODIFY `id_nguyenlieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4464;
+  MODIFY `id_nguyenlieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4465;
 
 --
 -- AUTO_INCREMENT cho bảng `phanloai`
@@ -468,6 +540,13 @@ ALTER TABLE `baidang_nguyenlieu`
 --
 ALTER TABLE `chidan`
   ADD CONSTRAINT `chidan_ibfk_1` FOREIGN KEY (`id_baidang`) REFERENCES `baidang` (`id_baidang`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `cuocthi_binhchon`
+--
+ALTER TABLE `cuocthi_binhchon`
+  ADD CONSTRAINT `cuocthi_binhchon_ibfk_1` FOREIGN KEY (`id_baidang`) REFERENCES `baidang` (`id_baidang`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cuocthi_binhchon_ibfk_2` FOREIGN KEY (`id_nguoidung`) REFERENCES `nguoidung` (`id_nguoidung`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `theodoi`

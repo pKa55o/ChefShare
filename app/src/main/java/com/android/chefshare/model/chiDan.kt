@@ -37,6 +37,6 @@ data class chiDan(
 
     @ColumnInfo(name = "anh")
     @SerializedName("anh")
-    var anh: ByteArray
+    var anh: String
 
 )

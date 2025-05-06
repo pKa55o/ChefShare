@@ -11,7 +11,7 @@ data class cachNau(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_cachnau", index = true)
     @SerializedName("id_cachnau")
-    val idCachNau: Int,
+    val idCachNau: Int?,
 
     @ColumnInfo(name = "cachnau")
     @SerializedName("cachnau")

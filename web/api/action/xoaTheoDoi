@@ -1,0 +1,28 @@
+<?php
+header('Content-Type: application/json');
+include_once('../conn.php'); 
+
+$json = file_get_contents("php://input");
+$data = json_decode($json, true);
+
+
+$id_nguoidung   = $data['id_nguoidung'];
+
+
+$sql = "DELETE FROM theodoi WHERE id_nguoidung = $id_nguoidung";
+
+$result = mysqli_query($conn, $sql);
+
+if ($result) {
+    echo json_encode([
+        "status" => "success",
+        "message" => "Đã THÊM BAIDANG thành công"
+    ]);
+} else {
+    echo json_encode([
+        "status" => "error",
+        "message" => "Lỗi SQL: " . mysqli_error($conn)
+    ]);
+}
+?>
+ 

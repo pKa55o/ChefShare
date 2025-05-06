@@ -5,13 +5,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "nguoidung")
+@Entity(tableName = "nguyenlieu")
 data class nguyenLieu(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_nguyenlieu")
     @SerializedName("id_nguyenlieu")
-    var idNguyenLieu: Int,
+    var idNguyenLieu: Int?,
 
     @ColumnInfo(name = "nguyenlieu")
     @SerializedName("nguyenlieu")

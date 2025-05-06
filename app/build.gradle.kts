@@ -48,6 +48,13 @@ android {
 }
 
 dependencies {
+    //Gson
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    //coroutin + lifecycle
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+
     // Core & UI
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -69,6 +76,8 @@ dependencies {
     // Glide
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
+    // CardView
+    implementation("androidx.cardview:cardview:1.0.0")
 
     // Navigation
     implementation(libs.androidx.navigation.fragment.ktx)

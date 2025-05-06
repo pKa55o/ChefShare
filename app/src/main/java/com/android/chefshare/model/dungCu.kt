@@ -11,7 +11,7 @@ data class dungCu(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_dungcu")
     @SerializedName("id_dungcu")
-    val idDungCu: Int,
+    val idDungCu: Int?,
 
     @ColumnInfo(name = "dungcu")
     @SerializedName("dungcu")

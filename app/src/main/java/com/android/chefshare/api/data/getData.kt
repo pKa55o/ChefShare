@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class getData {
 
     var data: EditText? = null
-    val IP = "192.168.1.14" //doi ip
+    val IP = "172.28.144.1" //doi ip
     val BASE_URL= "http://${IP}/api/data/"
     val TAG = "CHECK_RESPONSE"
 
@@ -22,7 +22,6 @@ class getData {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(ApiService::class.java)
-
     fun getBaiDang(){
         api.getBaiDang().enqueue(object : Callback<List<baiDang>> {
             override fun onResponse(

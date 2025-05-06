@@ -45,7 +45,7 @@ class MyRecipeStorageActivity : AppCompatActivity() {
         // DrawerLayout + NavigationView
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
-        val imgHeaderAvatar = findViewById<ImageView>(R.id.imgHeaderAvatar)
+        val imgHeaderAvatar = findViewById<ImageView>(R.id.imgAvatar)
 
         val user = UserManager.currentUser
         val photoUrl = user?.photoUrl?.toString()
@@ -158,7 +158,7 @@ class MyRecipeStorageActivity : AppCompatActivity() {
                 }
 //                R.id.nav_friends -> showToast("Các Bạn Bếp")
 //                R.id.nav_stats -> showToast("Thống Kê Bếp")
-                R.id.nav_recent -> showToast("Món đã xem gần đây")
+                R.id.liked -> showToast("Món đã xem gần đây")
 //                R.id.nav_premium -> showToast("Premium")
 //                R.id.nav_challenges -> showToast("Thử Thách")
                 R.id.nav_settings -> {
@@ -207,7 +207,7 @@ class MyRecipeStorageActivity : AppCompatActivity() {
     }
 
     private fun bindTopHeader() {
-        val imgHeaderAvatar = findViewById<ImageView>(R.id.imgHeaderAvatar)
+        val imgHeaderAvatar = findViewById<ImageView>(R.id.imgAvatar)
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
 

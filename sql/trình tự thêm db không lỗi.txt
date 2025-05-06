@@ -2,7 +2,7 @@ trình tự thêm db không lỗi :
 
 0.bảng nguoidung
 ***auto_increasement với các loại để values trường id null 
-1.bảng cachnau 
+1.bảng cachnau
 INSERT INTO `cachnau` (`id_cachnau`, `cachnau`) VALUES (NULL, 'Chiên');
 2.bảng dungcu
 INSERT INTO `dungcu` (`id_dungcu`, `dungcu`) VALUES (NULL, 'nồi chiên không dầu');

@@ -6,7 +6,7 @@
     <item
         android:id="@+id/nav_ai"
         android:icon="@drawable/ic_add"
-        android:title="Tạo với AI"/>
+        android:title="Đăng bài"/>
     <item
         android:id="@+id/nav_storage"
         android:icon="@drawable/ic_book"

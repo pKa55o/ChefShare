@@ -23,7 +23,7 @@ data class baiDang(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_baidang")
     @SerializedName("id_baidang")
-    val idBaiDang: Int,
+    val idBaiDang: Int?,
 
     @ColumnInfo(name = "id_nguoidung", index = true)
     @SerializedName("id_nguoidung")
@@ -39,7 +39,7 @@ data class baiDang(
 
     @ColumnInfo(name = "thumbnail")
     @SerializedName("thumbnail")
-    val thumbnail: ByteArray?,
+    val thumbnail: String?,
 
     @ColumnInfo(name = "mota")
     @SerializedName("mota")

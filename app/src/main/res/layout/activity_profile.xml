@@ -40,26 +40,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- ID người dùng -->
-    <TextView
-        android:id="@+id/tvUserId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#777"
-        app:layout_constraintTop_toBottomOf="@id/tvFullName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Nút sửa -->
-    <Button
-        android:id="@+id/btnEditProfile"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Sửa thông tin"
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@id/tvUserId"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
